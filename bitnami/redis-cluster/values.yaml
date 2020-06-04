@@ -14,11 +14,11 @@ global:
 ##
 image:
   registry: docker.io
-  repository: joscarfom/redis_cluster_setup
+  repository: bitnami/redis-cluster
   ## Bitnami Redis image tag
   ## ref: https://github.com/bitnami/bitnami-docker-redis#supported-tags-and-respective-dockerfile-links
   ##
-  tag: latest
+  tag: 6.0.4-debian-10-r12
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -193,25 +193,25 @@ redisPort: 6379
 ##
 tls:
   # Enable TLS traffic
-  enabled: true
+  enabled: false
   #
   # Whether to require clients to authenticate or not.
   authClients: true
   #
   # Name of the Secret that contains the certificates
-  certificatesSecret: certificates-tls-secret
+  certificatesSecret:
   #
   # Certificate filename
-  certFilename: "redis-primary.crt"
+  certFilename:
   #
   # Certificate Key filename
-  certKeyFilename: "redis-primary.key"
+  certKeyFilename:
   #
   # CA Certificate filename
-  certCAFilename: "redisCA.crt"
+  certCAFilename:
   #
   # File containing DH params (in order to support DH based ciphers)
-  #dhParamsFilename:
+  # dhParamsFilename:
 
 ##
 ## Redis parameters
